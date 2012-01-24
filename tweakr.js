@@ -6,6 +6,7 @@
  */
  
 tweakr = {};
+console.warn('TASK 2');
 tweakr.tags; // Our tag data
 tweakr.num = 2; // How many posts per-page
 tweakr.init = function(e){
@@ -18,6 +19,7 @@ tweakr.init = function(e){
 };
 tweakr.loadTags = function(start){
 	// Load this page of tags
+	console.warn('TASK 1');
 	$.getScript('http://oodavid.tumblr.com/api/read/json?num=50&callback=tweakr.onLoadTags&num=' + tweakr.num + '&start=' + start);
 };
 tweakr.onLoadTags = function(data){
@@ -29,6 +31,7 @@ tweakr.onLoadTags = function(data){
 			// Loop the tags
 			$.each(post.tags, function(t,tag){
 				// Do something with the tags
+				console.warn('TASK 2');
 				console.log(tag);
 			});
 		}
